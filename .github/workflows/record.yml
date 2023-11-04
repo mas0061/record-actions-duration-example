@@ -1,0 +1,14 @@
+on:
+  pull_request:
+
+jobs:
+  record-actions-duration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mas0061/record-actions-duration@v0.1.0
+        with:
+          repository_name: 'mas0061/nuxt3-practice'
+          workflow_name: 'ci.yml'
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo "$(cat actions-duration.json | jq .)"
