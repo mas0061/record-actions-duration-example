@@ -5,7 +5,7 @@ jobs:
   record-actions-duration:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: mas0061/record-actions-duration@v0.1.0
         with:
           repository_name: 'mas0061/nuxt3-practice'
